@@ -1,0 +1,10 @@
+[{
+	"site" 		: "RTC",
+	"updates"	:	
+		[{
+			"page"			:	"something.html",
+			"updateType"	:	"content",
+			"date"			:	"date",
+			"notes"			:	"notes"
+		}]
+}]	

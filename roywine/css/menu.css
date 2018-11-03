@@ -1,0 +1,330 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;	
+}
+
+/* ######### Shared basic style for mega drop down menu DIV ######### */
+
+.mega{
+	width:auto; /*default width of mega menu - 350*/
+	padding:10px;
+	position:absolute;
+	visibility:hidden;
+	z-index: 1000;
+	border:2px solid black;
+	border-top-width:1px;
+	background:white;
+			/*css 3 shadows*/
+	-webkit-box-shadow: 5px 5px 5px #c8c8c8; 
+	-moz-box-shadow: 5px 5px 5px #c8c8c8;
+	box-shadow: 5px 5px 5px #c8c8c8;
+}
+
+.mega .column{ /*each link column within a mega menu*/
+	float:left;
+	width:49%;
+}
+
+.mega a{
+	text-decoration:none;
+}
+
+.mega a[rel]:after{ /*add image "down.png" to anchor links with a rel attribute */
+	content:" " url(../img/down.png);/* URL for image of down arrow*/
+}
+
+.mega .column ul{
+	margin:5px ;
+	margin-left:5px;
+	padding:0;
+	list-style:none;
+}
+
+.mega .column ul li{
+	margin-bottom:3px;
+}
+/*style any UL within mega menu with class="ulmenu"*/
+.mega .ulmenu{ 
+	margin:0;
+	padding:0;
+	position:relative;
+	list-style:none;
+	margin-top: -5px;
+	width:200px;
+}
+
+.mega .ulmenu a{
+	display:inline-block;
+	border:1px solid gray;
+	color: white;
+	background-color: rgba(61,111,160,1); /* #5d8ca1; /*rgba(0,102,255,1);*/
+	padding:5px;
+	width:200px;
+}
+
+.mega .ulmenu a:hover{
+	color: rgba(153,0,0,1);
+}
+
+
+.submenu { 
+	/* moves the sub to the right*/
+	margin-left: 120px;
+}
+.sm1 {
+	margin-top: -25px;/* sets top edge of subMenu*/
+	position:absolute;
+	background-color: rgba(61,111,160,1);
+	overflow: visible;
+}
+
+/* ######### Style for Solid Block Mega Menu ######### */
+
+.solidblocktheme{ /*additional mega drop down menu style for this theme*/
+	padding:0; /*remove default padding inside mega menu*/
+}
+
+.solidblocktheme p, .solidblocktheme .column{
+	padding:5px; /*add padding inside p and .column elements within mega menu*/
+	width:auto;
+}
+
+.solidblockmenu{
+	margin: 0 auto;
+	margin-top: 12px;  /*set based on header image and height of header*/
+	text-align:center; /*sets alignment of the menu; left, center or right*/
+	padding:5px 0 5px 0 ;
+	border-bottom: 2px solid grey;
+	border-radius: 0 0 13px 13px;
+	font: bold 20px Arial;
+	width: 100%;
+	overflow: hidden;
+	border-width: 1px 0;
+	background-color:#003366; /*rgba(61,111,160,1);*/
+	display:none;
+}
+.solidblockmenu ul{
+	padding: 0;
+	margin: 0;	
+	
+}
+.solidblockmenu li{
+	display: inline;
+}
+
+.solidblockmenu li a{
+	color: white;
+	padding: 1.32rem 1.5rem 1.7rem;
+	padding-top: 1.9rem;
+	text-decoration: none;
+	font-family: Source Sans Pro, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height:1.2;
+}
+.solidblockmenu li:hover{
+	background-color: transparent;
+	border-bottom: .7rem solid #0071bc;
+}
+.solidblockmenu li a:hover{
+	color: red;
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height:1.2;
+}
+.solidblockmenu li a[rel]:after{ /*add "down.png" to anchor links, or those with a rel attribute */
+	content:" " url(../img/down.png);
+}
+/*.solidblockmenu li a:visited{
+	color: white;
+}*/
+/*Selected Tab style*/
+/*.solidblockmenu li a:hover, .solidblockmenu li a.selected{ 
+	color: white;
+}*/
+.stx { /* white bars in menu*/
+	color: white;
+	font-size: 15px;	
+}
+
+
+/***********************************************************************/
+/***********************************************************************/
+body{ /* CSS for BODY transition when menu is set to push BODY content. */ 
+	-moz-transition: left 100ms ease-in-out, right 100ms ease-in-out;
+	-webkit-transition: left 100ms ease-in-out, right 100ms ease-in-out;
+	transition: left 100ms ease-in-out, right 100ms ease-in-out;
+}
+
+
+.sidetogglemenu{ /* shared class for side toggle menus */
+	border-right: 5px solid #ff573b;
+	background-color: white;
+	width: 200px; /* default menu width */
+	height: 100%;
+	position: fixed;
+	top: 0; /*-100%*/
+	clear: both;
+	/*why is this in single quotes
+	visibility: hidden;*/
+	overflow-y: auto;
+	box-shadow: 5px 0 5px rgba(174, 174, 174, .8);
+	-moz-transition: all 100ms ease-in-out; /* change 100ms to slide in animation time */
+	-webkit-transition: all 100ms ease-in-out;
+	transition: all 100ms ease-in-out;
+}
+
+
+.sidetogglemenu ul{ /* Top UL inside toggle menu */
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.sidetogglemenu ul ul{ /* Toggle menu sub ULs style */
+  	border-left: 6px solid darkred;
+ 	margin-left: 5px;
+ 	padding-left: 2px;
+  	font-size: .9em;
+}
+
+.sidetogglemenu a{
+	font: bold 13px Verdana;
+	padding: 10px;
+	display: block;
+	color: #595959;
+	position: relative;
+	text-decoration: none;
+	border-bottom: 1px solid #C0C0C0;
+}
+
+.sidetogglemenu a img.downarrow{
+	position: absolute;
+	right: 5px;
+	top: 15px;
+}
+
+.sidetogglemenu a:hover{
+	background: red;
+	color: white;
+}
+
+/* #######  Additional CSS for toggle menu #togglemenu2  ####### */
+
+#togglemenu2{
+	width: 250px;
+	border-width: 0;
+	background: rgb(53,106,160);
+	box-shadow: -5px 0 5px rgba(174, 174, 174, .8);
+}
+
+#togglemenu2 ul a{
+	color: white;
+	border-bottom: 1px solid #eee;
+	font: bold 14px;
+	text-transform: uppercase;
+}
+
+#togglemenu2 a:hover{
+	background: #162a50;
+	color: white;
+}
+
+/* #######  Responsive Menu related CSS  ####### */
+
+div#smallscreentoggler{ /* CSS for small screen menus toggler, shown when device width is below specified */
+	z-index: 10001;
+	color: white;
+	position: relative;
+	width: auto;
+	overflow: hidden;
+	background: #003366;
+	font: normal 1.8em Arial;
+	margin-bottom: 0; /*.25em;*/
+	text-align: left;
+	box-shadow: -3px 3px 5px aliceblue;
+	cursor: pointer;
+	border-radius: 2px;
+	display: none;
+	-moz-transition: all 200ms ease-in-out;
+	-webkit-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
+}
+div#smallscreentoggler:after{
+	font: normal .85em Arial;
+	color: white;
+	content: " MENU";
+	
+}
+div#smallscreentoggler:hover{
+	/*background: #eee;*/
+	color: black;
+	-moz-transition: all 200ms ease-in-out;
+	-webkit-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
+}
+
+@media screen and (max-width: 800px){ /* CSS when device width is 800px or less, must match menu_builder.js */
+	.btn_midMenu{
+		display:none; /* disabled at this time */
+	}
+	.sidetogglemenu{
+		display:block;
+	}
+  	div#smallscreentoggler{
+		display: block; /* show small screen menus toggler */
+		position:relative;
+	}
+
+	.sidetogglemenu{ /* Set position of menus to static */
+		position: static;
+		border-width: 0;
+		border-top-width: 1px;
+		width: 98% !important;
+		height: auto;
+		box-shadow: 5px 0 5px rgba(174, 174, 174, .8) !important;
+		margin-left: 1px;
+		margin-bottom: 10px;
+		/*display:none;*/
+	}
+	.btn_midMenu{
+		display:none;
+	}
+
+}
+
+@media screen and (min-width: 800px){/*adjust to menu size*/
+	.oDiv{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.solidblockmenu{
+		display:block;
+	}
+	#btn_midMenu{
+		display:none;
+	}
+
+
+}
+@media screen and (max-width: 1150px){/* sets font for menu items*/
+	.solidblockmenu li a{
+		font-size:.75em;	
+	}
+}
+@media screen and (max-width: 1200px){/* sets font for menu items*/
+	.solidblockmenu li a{
+		font-size:.8em;	
+	}
+}
+@media screen and (max-width: 1250px){/* sets font for menu items*/
+	.solidblockmenu li a{
+		font-size: 1.5rem;
+		font-weight: 700;
+		line-height:1.2;	
+	}
+}

@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<title>www.roywine.com</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/roywine.css">
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<script src="js/menuObjects.js"></script>
+    <script src="js/menu_builder.js"></script>
+	<script>
+	function toggleDisplay(elId, displayType){
+		"use strict";
+		var el = document.getElementById(elId);
+		if(el.style.display === displayType){
+			el.style.display = 'none';
+		}else{
+			el.style.display = displayType;	
+		}
+		
+	}
+	</script>
+</head>
+
+<body>
+
+	<header>
+		<div class="header">
+		
+		
+			<script>
+				//root denote the split point for dynamic relative links, null for none
+				var root = '';
+				var menu = new MenuBuilder(root, primaryMenu, subMenus, sidePrimaryMenu, altSubMenus);
+			</script>
+		</div>
+<!--			<nav class="parent">
+
+				<div id="proParent" class="proParent hide">
+					<div class="proChild">
+						<a href="javascript:disclaimer.showDISCLAIMER('http://www.bootcamp.navy.mil', 'U.S. Navy Bootcamp site.  <br>Several uses of JSON and JS in this static site. <br> NEWS, Honor Grads and Training Groups are all updated via JSON utilizing the RTC Tool. <br>The entire site menu system is JS, built from custom objects for portability to other sites if needed.'); void 0" 
+						   title="Navy Bootcamp" >Navy Boot camp</a>
+					</div>
+					<div class="proChild">
+						<a href="javascript:disclaimer.showDISCLAIMER('http://www.public.navy.mil/netc/nstc/index.aspx', 'Naval Services Training Command'); void 0" 
+						   title="NSTC">Naval Service Training Command</a>
+					</div>
+					<div class="proChild">
+						<a href="javascript:disclaimer.showDISCLAIMER('http://www.sta-21.navy.mil/administration.html','Good use of JS to show mandatory disclaimer to only links leaving the site. '); void(0)"
+						   title="U.S. Navy Sta-21 Program">STA-21 Program - Administration</a>
+					</div>
+					<div class="proChild">
+						<a href="javascript:disclaimer.showDISCLAIMER('http://www.sta-21.navy.mil/education.html','An example of noscript tag 
+						use, both in the body and in the head.  <br>Another example of required disclaimer display.'); void(0)"
+						   title="U.S. Navy Sta-21 Program">STA-21 Program - Education</a>
+					</div>
+				</div>
+				<div id="perParent" class="perParent hide">
+					<div class="perChild">
+						<a href="javascript:disclaimer.showDISCLAIMER('http://www.quinnfamilybiblestudy.org', 'Custom JS menu, use of JSON and php for data retrieval and submission, revolving and random marquee, random backgrounds.<br> Playlists is amazing!.  <br>Custom tools for list updates.'); void 0" 
+						   title="Family Bible Study">Family Bible Study</a>
+					</div>
+				</div>
+				<div id="utilParent" class="utilParent hide">
+					<div class="utilChild">
+						<a href="javascript:disclaimer.showDISCLAIMER('timeCardTool.html', 'This tool is used to ensure a timecard reflects the correct minute intervals of 10ths. Data is saved in localStorage.'); void 0" title="Navy Bootcamp" >Mock Time Card Tool</a>
+					</div>
+					<div class="utilChild">
+						<a href="javascript:disclaimer.showDISCLAIMER('http://www.bootcamp.navy.mil/_9463/tools.html', 'Tool used to update JSON files for items on the Navy Bootcamp site.  Static, with no ability to utilize any server side scripts or code.'); void(0)"
+						   title="RTC Tools">RTC Tools</a>
+					</div>
+				</div>
+				<div id="aboutParent" class="aboutParent hide">
+					
+				</div>
+			</nav>-->
+	</header>
+	<main>
+		<h1 class="center">Roy Wine</h1>
+		<br/>
+		<h3 class="center"><a class="buttons" href="mailto:roywine@gmail.com" title="roywine@gmail.com" target="_self">email me</a></h3>
+		<div id="leftAside" class="leftAside">
+
+		</div>
+
+		<div id="rightAside" class="rightAside">
+			<p><button id="exBtn" type="button" onClick="expandMe();" class="buttons" value="Click to Expand" title="Click to Expand!">Click to Expand</button></p>
+			<p id="iFrameQFBS"><iframe id="frameMe" src="http://www.roywine.com/qfbs/" width="100%" height="600px" fullscreen></iframe></p>
+			
+			
+		</div>
+		<div class="mainDiv">
+			<p><h2>Developer...</h2> <h2>Programmer...</h2> adaptable, self-starting teammate that takes pride in following through to the end.</p>
+			<p>A few words that describe what I do and who I am.  Want to learn more? (<a href="javascript:disclaimer.showDISCLAIMER('#','Coming Soon!'); void(0)" title="Click to learn more">click here</a>)</p>
+			<br><br>
+		</div>
+	</main>
+	<footer>
+		<h1><a href="index.html" title="Home" target="_self" >Home</a></h1>
+	</footer>
+	<script src="js/ExtLinkDisclaimer.js"></script>
+    
+	<link rel="stylesheet" type="text/css" href="css/ExtLinkDisclaimer.css">	    
+ <script>
+	 function expandMe(){ 
+		 
+		 var fr = document.getElementById('rightAside');
+		 var btn = document.getElementById('exBtn');
+		 var fm = document.getElementById('frameMe');
+		 var w = fr.style.width;
+		 
+		 var v = (w == '100%') ? (btn.innerHTML = 'Click to Expand', fr.style.position = '', fr.style.top = '', fm.height = '600px', '20%') : (btn.innerHTML = 'Click to Shrink',fr.style.position = 'absolute',fr.style.top = '10px', fm.height = '100%','100%');
+	 	
+		 fr.style.width = v;
+	 }
+</script>       
+	<script>
+		var disclaimer = new DISCLAIMER();
+		function testFunction(event){
+			"use strict";
+			console.log(event.keyCode);
+			if(event.keyCode === 13){
+				bbList.addItem();
+			}
+		};
+		//var bbList = new BB_List();
+		//var validator = new InputValidator();
+		//gets postings.json
+		//var obj = getObjFromJSON(getJSONObj('json/postings.json'));
+	</script>
+	<script type="text/javascript">
+
+                ddmegamenu.docinit({
+                    menuid:'solidmenu',
+                    dur:400,
+                    easing:'easeInOutCirc' //<--no comma after last setting
+                })
+                
+                jQuery(function(){ // on DOM load
+                    menu2 = new sidetogglemenu({  // initialize menu
+                        id: 'togglemenu2',
+                        marginoffset: 0,
+                        downarrowsrc: 'img/toggledown.png'
+                    })
+                })
+                
+                function unhideMenu(){
+                
+                    var menuVis = document.getElementById('solidmenu').style.display;
+                    if(menuVis === 'none' || menuVis !== ""){
+                        document.getElementById('solidmenu').style.display = '';
+                    }else{
+                        document.getElementById('solidmenu').style.display = 'none';
+                    }
+                    
+                }
+				
+				
+
+
+				
+        </script>
+</body>
+	
+	
+</html>

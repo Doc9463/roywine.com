@@ -1,0 +1,59 @@
+.disclaimer{
+	/*configurable*/
+	background-color: rgba(0,0,0,.7);
+	padding: 15%;
+	width: 100vw;
+	height: 100vh;
+	top:0;
+	left:0;
+	/*needed*/
+	display: none;
+	margin: 0 auto;
+	text-align:center;
+	position:fixed;
+	overflow: hidden;
+	z-index:1000;
+}
+.disclaimerContent {/*dialog box items*/
+	/*configurable*/
+	background-color:#003366; 
+	color: white;
+	font-weight:700;
+	border: 2px solid rgba(0,51,51,1);
+	border-radius: 5px;
+	padding: 25px;
+	width: 50%;
+	height: auto;
+	/*needed*/	
+	margin: 0 auto;
+	text-align:center;
+	position: relative;
+	z-index:1001;	
+}
+#disclaimerP1{
+	/*configurable*/
+	color: white;
+	font-weight:700;
+	/*needed*/	
+	position:relative;
+	z-index: 1002;
+}
+#disclaimerContinue{
+	/*configurable*/
+	margin-right: 5px;	
+}
+@media screen and (max-width:600px){
+	.disclaimerContent {/*dialog box items*/
+		/*configurable*/
+		clear: both;
+		font-size:12px;
+		top: 100px;
+		width: 80%;
+		
+}
+	.disclaimer{
+		/*configurable*/
+		padding:5%;
+
+	}
+}

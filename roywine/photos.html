@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta charset="UTF-8">
+
+		<title>Photos</title>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="css/photos.css" type="text/css"/>
+	</head>
+
+	<body>
+		<header>
+		
+		
+		
+		</header>
+		<main>
+			
+			<div class="photoCenter">
+				<div style="margin: 10px auto; width: 600px; padding: 10px;">
+					<button class="btns" id="prevBtn" onClick="photos.previousImage()">Previous</button>
+					<button class="btns" id="pauseBtn" onClick="photos.pause()" >Pause</button>
+					<button class="btns" id="nextBtn" onClick="photos.nextImage()">Next</button>
+					<div style="resize:both; overflow: auto; padding: 5px; border: 2px solid black; width: 550px; margin: 10px auto;">
+						<img id="photoViewer" class="photoViewer" src="photos/1.jpg" alt="Images" style="width: 100%;" 
+						onclick="photos.pause();"/>
+					</div>
+					
+				</div>				
+				<div id="display"></div>
+				<select id="secondsSel">
+  					<option value="1000">1 second</option>
+					<option value="2000">2 seconds</option>
+					<option value="3000">3 seconds</option>
+					<option value="4000">4 seconds</option>
+					<option value="5000">5 seconds</option>
+					<option value="6000">6 seconds</option>
+				</select>
+			</div>
+		
+		</main>
+		<footer>
+		
+		
+		
+		</footer>
+		<script src="js/photos.js" type="text/javascript"></script>
+	</body>
+</html>
